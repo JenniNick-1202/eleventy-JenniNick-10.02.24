@@ -8,6 +8,13 @@ numberOfLatestPostsToShow: 3
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Jenni</h1>
+<p>This is my new blog on learning how to build websites.</p>
+	<img
+		src="img/logo-black.svg"
+		alt="web complete"
+		height="50px"
+		width="50px"
+		/>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
