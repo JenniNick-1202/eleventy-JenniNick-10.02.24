@@ -5,31 +5,37 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Jenni</h1>
-<p>This is my new blog on learning how to build websites.</p>
-	<img
-		src="img/logo-black.svg"
-		alt="web complete"
-		height="50px"
-		width="50px"
-		/>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+<!--Navbar-->
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+  <div class="container">
+      <img 
+          src="img/logo-no-background.svg" 
+          alt="JenniNick-Web-Dev"
+          width="100"
+          height="100"
+          />
 
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+      <h1 class="text-light p-3">Jenni Nicholson</h1>
+      <button
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navmenu"
+          >
+          <span class="navbar-toggler-icon bg-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+       <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+              <a href="#About-Me" class="nav-link text-light">About Me</a>
+           </li>
+          <li class="nav-item">
+           <a href="#My-Work" class="nav-link text-light">My Work</a>
+          </li>
+       </ul>
+      </div>        
+  </div>
+</nav>
